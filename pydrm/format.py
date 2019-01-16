@@ -71,6 +71,8 @@ DRM_FORMAT_YUV422       = fourcc_code('Y', 'U', '1', '6') # 2x1 subsampled Cb (1
 DRM_FORMAT_YVU422       = fourcc_code('Y', 'V', '1', '6') # 2x1 subsampled Cr (1) and Cb (2) planes
 DRM_FORMAT_YUV444       = fourcc_code('Y', 'U', '2', '4') # non-subsampled Cb (1) and Cr (2) planes
 DRM_FORMAT_YVU444       = fourcc_code('Y', 'V', '2', '4') # non-subsampled Cr (1) and Cb (2) planes
+DRM_FORMAT_XV15         = fourcc_code('X', 'V', '1', '5') # 2x2 subsampled Cr:Cb plane
+DRM_FORMAT_XV20         = fourcc_code('X', 'V', '2', '0') # 2x2 subsampled Cr:Cb plane
 
 # format, depth, num_planes, cpp, hsub, vsub
 drm_formats = {
@@ -134,6 +136,8 @@ drm_formats = {
         DRM_FORMAT_UYVY            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_VYUY            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_AYUV            : [ 0,  1, [ 4, 0, 0 ], 1, 1 ],
+        DRM_FORMAT_XV15            : [ 10,  2, [ 1, 2, 0 ], 2, 2 ],
+        DRM_FORMAT_XV20            : [ 10,  2, [ 1, 2, 0 ], 2, 1 ],
 }
 
 class DrmFormat(DrmObject):
