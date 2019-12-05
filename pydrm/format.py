@@ -61,6 +61,8 @@ DRM_FORMAT_NV16         = fourcc_code('N', 'V', '1', '6') # 2x1 subsampled Cr:Cb
 DRM_FORMAT_NV61         = fourcc_code('N', 'V', '6', '1') # 2x1 subsampled Cb:Cr plane
 DRM_FORMAT_NV24         = fourcc_code('N', 'V', '2', '4') # non-subsampled Cr:Cb plane
 DRM_FORMAT_NV42         = fourcc_code('N', 'V', '4', '2') # non-subsampled Cb:Cr plane
+DRM_FORMAT_XV15         = fourcc_code('X', 'V', '1', '5') # 2x2 subsampled Cb:Cr plane 2:10:10:10
+DRM_FORMAT_XV20         = fourcc_code('X', 'V', '2', '0') # 2x1 subsampled Cb:Cr plane 2:10:10:10
 DRM_FORMAT_YUV410       = fourcc_code('Y', 'U', 'V', '9') # 4x4 subsampled Cb (1) and Cr (2) planes
 DRM_FORMAT_YVU410       = fourcc_code('Y', 'V', 'U', '9') # 4x4 subsampled Cr (1) and Cb (2) planes
 DRM_FORMAT_YUV411       = fourcc_code('Y', 'U', '1', '1') # 4x1 subsampled Cb (1) and Cr (2) planes
@@ -71,6 +73,8 @@ DRM_FORMAT_YUV422       = fourcc_code('Y', 'U', '1', '6') # 2x1 subsampled Cb (1
 DRM_FORMAT_YVU422       = fourcc_code('Y', 'V', '1', '6') # 2x1 subsampled Cr (1) and Cb (2) planes
 DRM_FORMAT_YUV444       = fourcc_code('Y', 'U', '2', '4') # non-subsampled Cb (1) and Cr (2) planes
 DRM_FORMAT_YVU444       = fourcc_code('Y', 'V', '2', '4') # non-subsampled Cr (1) and Cb (2) planes
+DRM_FORMAT_Y8           = fourcc_code('G', 'R', 'E', 'Y') # 8  Greyscale
+DRM_FORMAT_Y10          = fourcc_code('Y', '1', '0', ' ') # 10  Greyscale
 
 # format, depth, num_planes, cpp, hsub, vsub
 drm_formats = {
@@ -129,11 +133,15 @@ drm_formats = {
         DRM_FORMAT_NV61            : [ 0,  2, [ 1, 2, 0 ], 2, 1 ],
         DRM_FORMAT_NV24            : [ 0,  2, [ 1, 2, 0 ], 1, 1 ],
         DRM_FORMAT_NV42            : [ 0,  2, [ 1, 2, 0 ], 1, 1 ],
+        DRM_FORMAT_XV15            : [ 0,  2, [ 1, 2, 0 ], 2, 2 ],
+        DRM_FORMAT_XV20            : [ 0,  2, [ 1, 2, 0 ], 2, 1 ],
         DRM_FORMAT_YUYV            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_YVYU            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_UYVY            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_VYUY            : [ 0,  1, [ 2, 0, 0 ], 2, 1 ],
         DRM_FORMAT_AYUV            : [ 0,  1, [ 4, 0, 0 ], 1, 1 ],
+        DRM_FORMAT_Y8              : [ 0,  1, [ 1, 0, 0 ], 1, 1 ],
+        DRM_FORMAT_Y10             : [ 0,  1, [ 1, 2, 0 ], 1, 1 ],
 }
 
 class DrmFormat(DrmObject):
